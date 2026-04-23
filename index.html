@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>WAYPOINT — Legal</title>
+<meta name="description" content="Legal pages for the WAYPOINT app." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --ink: #1C151F;
+  --teal: #4DBFAF;
+  --violet: #B57BCE;
+  --sunrise: #D78157;
+  --cream: #F9F5EE;
+  --canvas: #F5EFE6;
+  --border: rgba(28,21,31,0.14);
+  --border-subtle: rgba(28,21,31,0.09);
+  --shadow-soft: 0 6px 18px rgba(13,10,16,0.07);
+  --shadow-lift: 0 12px 28px rgba(13,10,16,0.10);
+  --font-display: "Epilogue", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --app-gradient: linear-gradient(134deg, #F5EFE6 0%, #EBE2D5 55%, #EBF2F1 100%);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--app-gradient);
+  background-attachment: fixed;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(245,239,230,0.72);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-brand .dot { color: var(--teal); }
+
+/* PAGE */
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 80px 28px 120px;
+}
+
+/* HERO */
+.hero {
+  margin-bottom: 60px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--violet);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+  margin: 0 0 16px;
+}
+
+.subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(28,21,31,0.6);
+  max-width: 480px;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: rgba(28,21,31,0.6);
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 32px 28px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.footer-brand .dot { color: var(--teal); }
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(28,21,31,0.4);
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .title { font-size: 34px; }
+  .page { padding: 60px 20px 80px; }
+  .nav-inner { padding: 0 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">WAYPOINT<span class="dot">.</span></a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <section class="hero">
+    <span class="eyebrow">Legal</span>
+    <h1 class="title">Policies & Terms</h1>
+    <p class="subtitle">
+      Everything you need to understand how WAYPOINT works, how your data is handled, and the rules that govern the service.
+    </p>
+  </section>
+
+  <section class="grid">
+    
+    <a href="/privacy-policy.html" class="card">
+      <div class="card-title">Privacy Policy</div>
+      <div class="card-desc">
+        How we collect, use, and protect your personal information.
+      </div>
+    </a>
+
+    <a href="/terms.html" class="card">
+      <div class="card-title">Terms of Service</div>
+      <div class="card-desc">
+        The rules, responsibilities, and conditions for using WAYPOINT.
+      </div>
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">WAYPOINT<span class="dot">.</span></div>
+    <div class="footer-copy">© 2026 · WAYPOINT</div>
+  </div>
+</footer>
+
+</body>
+</html>

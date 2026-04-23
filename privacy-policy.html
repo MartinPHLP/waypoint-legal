@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy — WAYPOINT</title>
+<meta name="description" content="Privacy Policy for the WAYPOINT app — how we collect, use, and protect your data." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" />
+<style>
+  /* ── Design tokens ── */
+  :root {
+    --ink: #1C151F;
+    --teal: #4DBFAF;
+    --violet: #B57BCE;
+    --sunrise: #D78157;
+    --cream: #F9F5EE;
+    --canvas: #F5EFE6;
+    --warmwhite: #F4EFE4;
+    --surface-inset: #E2D9CF;
+    --border: rgba(28,21,31,0.14);
+    --border-subtle: rgba(28,21,31,0.09);
+    --muted: #5C5459;
+    --faint: #A89FA6;
+    --shadow-soft: 0 6px 18px rgba(13,10,16,0.07);
+    --shadow-lift: 0 12px 28px rgba(13,10,16,0.10);
+    --font-display: "Epilogue", system-ui, sans-serif;
+    --font-body: "DM Sans", system-ui, sans-serif;
+    --app-gradient: linear-gradient(134deg, #F5EFE6 0%, #EBE2D5 55%, #EBF2F1 100%);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0; padding: 0;
+    background: var(--app-gradient);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    background: rgba(245,239,230,0.72);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .nav-brand {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-brand .dot { color: var(--teal); }
+  .nav-links { display: flex; align-items: center; gap: 20px; }
+  .nav-links a {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 13.5px;
+    color: rgba(28,21,31,0.55);
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.active { color: var(--violet); font-weight: 700; }
+
+  /* ── Layout ── */
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 64px 28px 120px;
+  }
+
+  /* ── Header ── */
+  .doc-header {
+    margin-bottom: 52px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--violet);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .doc-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 48px;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-top: 20px;
+  }
+  .doc-meta span {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: rgba(28,21,31,0.5);
+  }
+  .doc-meta strong { color: rgba(28,21,31,0.75); font-weight: 500; }
+
+  /* ── Notice banner ── */
+  .notice {
+    background: rgba(181,123,206,0.10);
+    border: 1px solid rgba(181,123,206,0.3);
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 52px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .notice-icon { flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px; color: var(--violet); }
+  .notice p { margin: 0; font-size: 14px; line-height: 1.55; color: rgba(28,21,31,0.72); }
+  .notice p strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Table of contents ── */
+  .toc-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 52px;
+  }
+  .toc-label {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(28,21,31,0.4);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 20px;
+  }
+  .toc-grid a {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 400;
+    color: rgba(28,21,31,0.62);
+    text-decoration: none;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.16s;
+  }
+  .toc-grid a:hover { color: var(--violet); }
+  .toc-num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: rgba(28,21,31,0.3);
+    min-width: 20px;
+  }
+
+  /* ── Sections ── */
+  .section {
+    margin-bottom: 44px;
+    scroll-margin-top: 72px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--border-subtle);
+  }
+  .section-num {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--violet);
+    min-width: 24px;
+    padding-top: 3px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0;
+  }
+  .section-body { padding-left: 36px; }
+  .section-body p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(28,21,31,0.7);
+    margin: 0 0 12px;
+  }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* ── Data categories grid ── */
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .data-chip {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow-soft);
+  }
+  .data-chip-label {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .chip-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--violet);
+    flex-shrink: 0;
+  }
+  .chip-dot.teal { background: var(--teal); }
+  .chip-dot.sunrise { background: var(--sunrise); }
+  .chip-dot.muted { background: rgba(28,21,31,0.3); }
+  .data-chip ul {
+    margin: 0; padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .data-chip ul li {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: rgba(28,21,31,0.62);
+    padding-left: 12px;
+    position: relative;
+  }
+  .data-chip ul li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: rgba(28,21,31,0.3);
+  }
+
+  /* ── Providers card ── */
+  .providers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    margin: 14px 0;
+  }
+  .provider-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .provider-row:last-child { border-bottom: none; }
+  .provider-icon {
+    width: 32px; height: 32px;
+    border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 15px;
+  }
+  .provider-info { display: flex; flex-direction: column; gap: 1px; }
+  .provider-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .provider-desc {
+    font-size: 12px;
+    color: rgba(28,21,31,0.5);
+    line-height: 1.4;
+  }
+
+  /* ── Legal bases tag list ── */
+  .bases-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0;
+  }
+  .base-tag {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .base-tag.violet { color: var(--violet); background: rgba(181,123,206,0.09); border-color: rgba(181,123,206,0.35); }
+  .base-tag.teal   { color: var(--teal);   background: rgba(77,191,175,0.09);  border-color: rgba(77,191,175,0.35); }
+  .base-tag.ink    { color: rgba(28,21,31,0.6); background: rgba(28,21,31,0.05); border-color: rgba(28,21,31,0.18); }
+  .base-tag.sunrise { color: var(--sunrise); background: rgba(215,129,87,0.09); border-color: rgba(215,129,87,0.35); }
+
+  /* ── Rights card ── */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .right-chip {
+    background: rgba(181,123,206,0.08);
+    border: 1px solid rgba(181,123,206,0.22);
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 12px;
+    color: var(--violet);
+    text-align: center;
+  }
+
+  /* ── General list style ── */
+  .section-body ul {
+    margin: 10px 0 12px;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .section-body ul li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(28,21,31,0.7);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .section-body ul li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--violet);
+    margin-top: 8px;
+    opacity: 0.7;
+  }
+
+  /* ── No-sell badge ── */
+  .no-sell {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(77,191,175,0.12);
+    border: 1px solid rgba(77,191,175,0.35);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--teal);
+    margin-bottom: 14px;
+  }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px 26px;
+    box-shadow: var(--shadow-soft);
+    margin: 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: rgba(181,123,206,0.14);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--violet);
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 3px; }
+  .contact-info .name { font-family: var(--font-display); font-weight: 800; font-size: 15px; color: var(--ink); }
+  .contact-info a { font-size: 14px; color: var(--violet); text-decoration: none; font-weight: 500; }
+  .contact-info a:hover { text-decoration: underline; }
+  .contact-info .alt { font-size: 13px; color: rgba(28,21,31,0.5); margin-top: 1px; }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 32px 28px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .footer-brand { font-family: var(--font-display); font-weight: 900; font-size: 15px; letter-spacing: -0.02em; color: var(--ink); }
+  .footer-brand .dot { color: var(--teal); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 13px; color: rgba(28,21,31,0.5); text-decoration: none; transition: color 0.16s; }
+  .footer-links a:hover { color: var(--ink); }
+  .footer-links a.current { color: var(--violet); font-weight: 500; }
+  .footer-copy { width: 100%; font-size: 12px; color: rgba(28,21,31,0.35); margin-top: 4px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .doc-title { font-size: 34px; }
+    .page { padding: 44px 20px 80px; }
+    .nav-inner { padding: 0 20px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .section-body { padding-left: 0; }
+    .section-header { flex-direction: column; gap: 4px; }
+    .data-grid { grid-template-columns: 1fr; }
+    .rights-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-card { flex-direction: column; gap: 14px; align-items: flex-start; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-links { flex-wrap: wrap; gap: 14px; }
+    .toc-card { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">WAYPOINT<span class="dot">.</span></a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- Header -->
+  <header class="doc-header">
+    <span class="eyebrow">Legal</span>
+    <h1 class="doc-title">Privacy<br>Policy</h1>
+    <p style="font-size:15px;color:rgba(28,21,31,0.6);margin:0;max-width:480px;line-height:1.6;">How we collect, use, and protect your information when you use WAYPOINT.</p>
+    <div class="doc-meta">
+      <span><strong>Effective:</strong> 23 April 2026</span>
+      <span><strong>Last updated:</strong> 23 April 2026</span>
+    </div>
+  </header>
+
+  <!-- Notice -->
+  <div class="notice">
+    <svg class="notice-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 2a8 8 0 100 16A8 8 0 0010 2z"/><path d="M10 9v5"/><circle cx="10" cy="6.5" r=".6" fill="currentColor" stroke="none"/>
+    </svg>
+    <p>We do <strong>not</strong> sell your personal information. This policy explains exactly what we collect and why — so you can make informed choices about using WAYPOINT.</p>
+  </div>
+
+  <!-- Table of Contents -->
+  <div class="toc-card">
+    <span class="toc-label">Contents</span>
+    <div class="toc-grid">
+      <a href="#s1"><span class="toc-num">01</span>Information We Collect</a>
+      <a href="#s2"><span class="toc-num">02</span>How We Use Information</a>
+      <a href="#s3"><span class="toc-num">03</span>Legal Bases (EEA/UK)</a>
+      <a href="#s4"><span class="toc-num">04</span>Notifications &amp; Permissions</a>
+      <a href="#s5"><span class="toc-num">05</span>How &amp; Where Data Is Stored</a>
+      <a href="#s6"><span class="toc-num">06</span>Sharing of Information</a>
+      <a href="#s7"><span class="toc-num">07</span>Data Retention</a>
+      <a href="#s8"><span class="toc-num">08</span>Account Deletion &amp; Your Rights</a>
+      <a href="#s9"><span class="toc-num">09</span>International Data Transfers</a>
+      <a href="#s10"><span class="toc-num">10</span>Children's Privacy</a>
+      <a href="#s11"><span class="toc-num">11</span>Security</a>
+      <a href="#s12"><span class="toc-num">12</span>Changes to This Policy</a>
+      <a href="#s13"><span class="toc-num">13</span>Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Information We Collect</h2>
+    </div>
+    <div class="section-body">
+      <p>We collect the following categories of information when you use WAYPOINT:</p>
+      <div class="data-grid">
+        <div class="data-chip">
+          <div class="data-chip-label"><span class="chip-dot violet"></span>Account</div>
+          <ul>
+            <li>Email address</li>
+            <li>Account credentials (via auth provider)</li>
+            <li>Internal user ID</li>
+          </ul>
+        </div>
+        <div class="data-chip">
+          <div class="data-chip-label"><span class="chip-dot teal"></span>Profile &amp; Onboarding</div>
+          <ul>
+            <li>Name or nickname</li>
+            <li>Recovery start date</li>
+            <li>Onboarding preferences</li>
+          </ul>
+        </div>
+        <div class="data-chip">
+          <div class="data-chip-label"><span class="chip-dot violet"></span>Wellness Content</div>
+          <ul>
+            <li>Daily check-in responses</li>
+            <li>Urge logs (triggers, emotions, notes)</li>
+            <li>Weekly review responses</li>
+            <li>Custom preference lists</li>
+          </ul>
+        </div>
+        <div class="data-chip">
+          <div class="data-chip-label"><span class="chip-dot sunrise"></span>Support &amp; Contact</div>
+          <ul>
+            <li>In-app contact messages</li>
+            <li>Selected support topic</li>
+          </ul>
+        </div>
+        <div class="data-chip">
+          <div class="data-chip-label"><span class="chip-dot teal"></span>Subscription Data</div>
+          <ul>
+            <li>Subscription status</li>
+            <li>Entitlement metadata</li>
+            <li>Purchase info via app stores</li>
+          </ul>
+        </div>
+        <div class="data-chip">
+          <div class="data-chip-label"><span class="chip-dot muted"></span>Technical &amp; Usage</div>
+          <ul>
+            <li>Device/platform metadata</li>
+            <li>Session-related app state</li>
+            <li>Network/connectivity state</li>
+            <li>Onboarding analytics (when enabled)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">How We Use Information</h2>
+    </div>
+    <div class="section-body">
+      <p>We use your information to:</p>
+      <ul>
+        <li>Create and secure your account</li>
+        <li>Provide personalized check-ins, recovery workflows, and reminders</li>
+        <li>Save and sync your entries and preferences</li>
+        <li>Generate in-app insights and weekly summaries</li>
+        <li>Process and manage subscriptions and entitlements</li>
+        <li>Respond to support requests</li>
+        <li>Improve app performance, reliability, and onboarding experience</li>
+        <li>Detect misuse and protect the service</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Legal Bases (EEA/UK, if applicable)</h2>
+    </div>
+    <div class="section-body">
+      <p>Where required, we process data under one or more of the following legal bases:</p>
+      <div class="bases-list">
+        <span class="base-tag violet">Contract performance</span>
+        <span class="base-tag teal">Legitimate interests</span>
+        <span class="base-tag sunrise">Consent</span>
+        <span class="base-tag ink">Legal obligations</span>
+      </div>
+      <p style="margin-top:10px;">Contract performance applies to providing the app features you request. Legitimate interests cover security, product improvement, and abuse prevention. Consent applies to optional features such as notifications where required by law.</p>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Notifications and Permissions</h2>
+    </div>
+    <div class="section-body">
+      <p>WAYPOINT may request notification permissions to send scheduled reminders such as check-ins and weekly prompts.</p>
+      <p>On Android, the app may request permissions related to notifications, vibration, and exact alarm scheduling so reminders occur at your chosen time.</p>
+      <p>You can disable notifications at any time in your device settings.</p>
+    </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">How and Where Data Is Stored</h2>
+    </div>
+    <div class="section-body">
+      <div class="providers-list">
+        <div class="provider-row">
+          <div class="provider-icon" style="background:rgba(77,191,175,0.12);">🗄️</div>
+          <div class="provider-info">
+            <span class="provider-name">Supabase</span>
+            <span class="provider-desc">Authentication, database, and backend functions — cloud hosted</span>
+          </div>
+        </div>
+        <div class="provider-row">
+          <div class="provider-icon" style="background:rgba(181,123,206,0.12);">💳</div>
+          <div class="provider-info">
+            <span class="provider-name">RevenueCat</span>
+            <span class="provider-desc">Subscription and entitlement management — with Apple/Google billing</span>
+          </div>
+        </div>
+        <div class="provider-row">
+          <div class="provider-icon" style="background:rgba(28,21,31,0.06);">📱</div>
+          <div class="provider-info">
+            <span class="provider-name">Local Device Storage</span>
+            <span class="provider-desc">Session persistence and temporary onboarding cache — stored on your device only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Sharing of Information</h2>
+    </div>
+    <div class="section-body">
+      <div class="no-sell">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5 6.5-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        We do not sell your personal information
+      </div>
+      <p>We share information only as needed with service providers that process data on our behalf:</p>
+      <ul>
+        <li>Supabase — authentication, database, and backend operations</li>
+        <li>RevenueCat — subscription and entitlement operations</li>
+        <li>Apple App Store / Google Play — billing and subscription management</li>
+        <li>Expo services — app infrastructure features such as notifications and platform functionality</li>
+      </ul>
+      <p>We may also disclose information if required by law, legal process, or to protect rights, safety, and platform integrity.</p>
+    </div>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Data Retention</h2>
+    </div>
+    <div class="section-body">
+      <p>We retain information for as long as needed to provide the service and for legitimate business and legal purposes, including security and compliance.</p>
+      <p>Account and app-content data are generally retained until account deletion, or as otherwise required by law.</p>
+    </div>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Account Deletion and Your Rights</h2>
+    </div>
+    <div class="section-body">
+      <p>You can request deletion of your account directly from within the app settings. When deletion is processed, we will delete or de-identify personal information associated with your account, subject to legal or operational retention needs.</p>
+      <p>Depending on your region, you may have the following rights over your personal data:</p>
+      <div class="rights-grid">
+        <div class="right-chip">Access</div>
+        <div class="right-chip">Correct</div>
+        <div class="right-chip">Delete</div>
+        <div class="right-chip">Restrict</div>
+        <div class="right-chip">Object</div>
+        <div class="right-chip">Portability</div>
+      </div>
+      <p style="margin-top:12px;">To exercise any of these rights, contact us at <a href="mailto:contact@waypointapp.website" style="color:var(--violet);text-decoration:none;font-weight:500;">contact@waypointapp.website</a> or via the in-app contact form.</p>
+    </div>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2 class="section-title">International Data Transfers</h2>
+    </div>
+    <div class="section-body">
+      <p>Your information may be processed in countries other than your own, where our service providers operate.</p>
+      <p>Where required by applicable law, we implement appropriate safeguards for any such international transfers.</p>
+    </div>
+  </div>
+
+  <!-- Section 10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2 class="section-title">Children's Privacy</h2>
+    </div>
+    <div class="section-body">
+      <p>WAYPOINT is not intended for children under 16 years old. We do not knowingly collect personal information from children below that age.</p>
+      <p>If you believe we have inadvertently collected data from a child under 16, please contact us immediately.</p>
+    </div>
+  </div>
+
+  <!-- Section 11 -->
+  <div class="section" id="s11">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2 class="section-title">Security</h2>
+    </div>
+    <div class="section-body">
+      <p>We use reasonable technical and organizational safeguards to protect personal data, including authenticated access controls and encrypted network transport.</p>
+      <p>No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+    </div>
+  </div>
+
+  <!-- Section 12 -->
+  <div class="section" id="s12">
+    <div class="section-header">
+      <span class="section-num">12</span>
+      <h2 class="section-title">Changes to This Privacy Policy</h2>
+    </div>
+    <div class="section-body">
+      <p>We may update this Privacy Policy from time to time. If we make material changes, we will update the "Last Updated" date and provide notice as required by law.</p>
+    </div>
+  </div>
+
+  <!-- Section 13 -->
+  <div class="section" id="s13">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <h2 class="section-title">Contact Us</h2>
+    </div>
+    <div class="section-body">
+      <p>For privacy questions or to exercise your rights, reach out to us:</p>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="3"/>
+            <path d="M2 8l10 6 10-6"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <a href="mailto:contact@waypointapp.website">contact@waypointapp.website</a>
+          <span class="alt">Or via the in-app contact form in WAYPOINT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand">WAYPOINT<span class="dot">.</span></span>
+    <span class="footer-copy">© 2026 · WAYPOINT is not a medical provider.</span>
+  </div>
+</footer>
+
+</body>
+</html>
